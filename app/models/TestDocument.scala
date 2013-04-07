@@ -11,8 +11,14 @@ object TestDocument
 {
   def getPdf = {
     val byteout = new ByteArrayOutputStream
-    val doc = new Document(PageSize.A4, 20, 20, 25, 15)
+    val doc = new Document(PageSize.A4, 30, 30, 35, 25)
     val writer = PdfWriter.getInstance(doc, byteout)
+
+    doc.addAuthor("高松 誠")
+    doc.addSubject("PDF文書作成の勉強")
+
+    //val header = new HeaderFooter(
+
     doc.open
 
     val anchorTarget = new Anchor("First page of the document.")
@@ -22,8 +28,7 @@ object TestDocument
     paragraph1.add(anchorTarget)
     doc.add(paragraph1)
 
-    doc.add(new Paragraph("Some more text on the first page with different color and font type.",
-      FontFactory.getFont(FontFactory.COURIER ,14, Font.BOLD, new CMYKColor(0, 255, 0, 0))))
+    doc.add(new Paragraph("Some more text on the first page with different color and font type.", Fonts.x))
 
     doc.close
 

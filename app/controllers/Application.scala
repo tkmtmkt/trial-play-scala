@@ -12,10 +12,20 @@ object Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
-  def test = Action {
-    //Ok(models.TestDocument).as("application/pdf")
-
+  def pdf1 = Action {
     val pdf = TestDocument.getPdf
+
+    SimpleResult(
+      header = ResponseHeader(200,
+        Map(CONTENT_LENGTH -> pdf.size.toString,
+            CONTENT_TYPE -> "application/pdf")),
+      body = Enumerator(pdf.toByteArray)
+    )
+  }
+
+  def pdf2 = Action {
+    val pdf = PdfTemplate.getPdf
+
     SimpleResult(
       header = ResponseHeader(200,
         Map(CONTENT_LENGTH -> pdf.size.toString,
