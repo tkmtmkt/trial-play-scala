@@ -8,7 +8,7 @@ object Fonts {
 
   //(ゴシック15pt(太字)
   lazy val header =
-      new Font(BaseFont.createFont("HeiseiKakuGo-W5", "UniJIS-UCS2-H", BaseFont.NOT_EMBEDDED), 15, Font.BOLD)
+    new Font(BaseFont.createFont("HeiseiKakuGo-W5", "UniJIS-UCS2-H", BaseFont.NOT_EMBEDDED), 15, Font.BOLD)
 
   //ゴシック11pt
   lazy val g11 =
@@ -28,6 +28,5 @@ object Fonts {
 
   //ゴシック11pt(赤)
   lazy val red_11 =
-    new Font(BaseFont.createFont("HeiseiKakuGo-W5", "UniJIS-UCS2-H", BaseFont.NOT_EMBEDDED), 11)
-  //red_11.setColor(new BaseColor(255, 0, 0))
+    new Font(BaseFont.createFont("HeiseiKakuGo-W5", "UniJIS-UCS2-H", BaseFont.NOT_EMBEDDED), 11, Font.NORMAL, BaseColor.RED)
 }

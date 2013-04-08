@@ -10,6 +10,7 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     // Add your project dependencies here,
     "com.itextpdf" % "itextpdf" % "5.4.0",
+    "com.itextpdf" % "itext-asian" % "5.2.0",
     "org.mongodb" %% "casbah" % "2.5.1",
     // for logging
     "org.slf4j" % "slf4j-simple" % "1.7.3",
