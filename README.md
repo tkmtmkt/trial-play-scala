@@ -13,4 +13,5 @@ This file will be packaged with your application, when using `play dist`.
 * [Javaアプリから動的にPDFファイルを生成する](http://www.ibm.com/developerworks/jp/opensource/library/os-javapdf/)
 * [iTextを利用してJavaからPDF形式の帳票を出力する：CodeZiine](http://codezine.jp/article/detail/84)
 * [iTextを使ってPDFフォームに値を埋め込む方法](http://d.hatena.ne.jp/onozaty/20070317/p1)
+* [防衛省 訓令・達・通達等 情報公開サービス](http://www.clearing.mod.go.jp/kunrei_web/)
 

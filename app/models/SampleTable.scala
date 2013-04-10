@@ -20,36 +20,46 @@ object SampleTable
     //val header = new HeaderFooter(
     doc.open
 
-    doc.add(new Paragraph(""))
+    doc.add(new Paragraph("別記様式第４（第１１条関係）", Fonts.m10))
 
     val table = new PdfPTable(3)
     table.setTotalWidth(mm2pixel(170f))
-    table.setWidths(Array (3f, 1f, 1f))
+    table.setWidths(Array (3, 1, 1))
+    table.setLockedWidth(true)
+    table.getDefaultCell().setBorderWidth(1f)
+
+    val cellBorder = new PdfPCell()
+    cellBorder.setBorderWidth(1f)
+    val cellNoBorder = new PdfPCell()
+    cellNoBorder.setBorderWidth(0f)
 
     // １行目
-    val col11 = new PdfPCell(new Paragraph(""))
-    col11.setMinimumHeight(mm2pixel(6f))
-    val col12 = new PdfPCell(new Paragraph("確　　　　認", Fonts.m10))
+    val col11 = new PdfPCell(cellNoBorder)
+    val col12 = new PdfPCell(cellBorder)
+    col11.setFixedHeight(mm2pixel(6f))
     col12.setColspan(2)
+    col12.setPhrase(new Paragraph("確　　　　認", Fonts.m10))
     col12.setHorizontalAlignment(Element.ALIGN_CENTER)
     table.addCell(col11)
     table.addCell(col12)
 
     // ２行目
-    val col21 = new PdfPCell(new Paragraph("別記様式第４（第１１条関係）\n（部外者用）", Fonts.m10))
+    val col21 = new PdfPCell(cellNoBorder)
+    val col22 = new PdfPCell(cellBorder)
+    val col23 = new PdfPCell(cellBorder)
+    col21.setFixedHeight(mm2pixel(16f))
+    col21.setPhrase(new Paragraph("（部外者用）", Fonts.m10))
     col21.setVerticalAlignment(Element.ALIGN_BOTTOM)
-    col21.setMinimumHeight(mm2pixel(16f))
-    val col22 = new PdfPCell(new Paragraph(""))
-    val col23 = new PdfPCell(new Paragraph("(TEL)", Fonts.m10))
+    col23.setPhrase(new Paragraph("(TEL)", Fonts.t10))
     col23.setVerticalAlignment(Element.ALIGN_BOTTOM)
     table.addCell(col21)
     table.addCell(col22)
     table.addCell(col23)
 
     // ３行目
-    val col31 = new PdfPCell(new Paragraph(""))
+    val col31 = new PdfPCell(cellBorder)
+    col31.setFixedHeight(mm2pixel(180f))
     col31.setColspan(3)
-    col31.setMinimumHeight(mm2pixel(180f))
     table.addCell(col31)
 
     doc.add(table)

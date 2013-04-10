@@ -4,7 +4,10 @@ import com.itextpdf.awt.AsianFontMapper._
 import com.itextpdf.text._
 
 object Fonts {
-  lazy val x = FontFactory.getFont(FontFactory.COURIER ,14, Font.BOLD, BaseColor.MAGENTA)
+  //欧文10pt
+  lazy val c10 = FontFactory.getFont(FontFactory.COURIER ,10)
+  lazy val t10 = FontFactory.getFont(FontFactory.TIMES ,10)
+  lazy val h10 = FontFactory.getFont(FontFactory.HELVETICA ,10)
 
   //(ゴシック15pt(太字)
   lazy val header = FontFactory.getFont(JapaneseFont_Go, JapaneseEncoding_H, 15, Font.BOLD)
