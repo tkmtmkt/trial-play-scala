@@ -5,9 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index
 
-GET     /pdf1                       controllers.Application.pdf1
-
-GET     /pdf2                       controllers.Application.pdf2
+GET     /doc1.pdf                   controllers.Application.pdf1
+GET     /doc2.pdf                   controllers.Application.pdf2
+GET     /doc3.pdf                   controllers.Application.pdf3
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
