@@ -1,4 +1,4 @@
-study-scala-play
+study-play-scala
 ================
 
 This file will be packaged with your application, when using `play dist`.
